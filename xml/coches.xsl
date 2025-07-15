@@ -92,7 +92,7 @@
                       </a>
                       <a class="btn btn-danger btn-sm">
                         <xsl:attribute name="href">
-                          <xsl:text>../controladores/eliminar.php?matricula=</xsl:text>
+                          <xsl:text>../controladores/c.eliminar.php?matricula=</xsl:text>
                           <xsl:value-of select="@matricula"/>
                         </xsl:attribute>
                         <xsl:attribute name="onclick">return confirmarEliminacion()</xsl:attribute>
