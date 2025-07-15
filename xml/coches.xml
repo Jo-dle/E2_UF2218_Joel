@@ -16,17 +16,10 @@
     <precio venta="nuevo">10000</precio>
   </coche>
   <coche matricula="5656FFF">
-    <marca>seat</marca>
-    <modelo>133</modelo>
-    <puertas>3</puertas>
-    <color>rojo</color>
-    <precio venta="ocasión">2000</precio>
-  </coche>
-  <coche matricula="0011FFF">
-    <marca>ford</marca>
-    <modelo>Granada</modelo>
-    <puertas>3</puertas>
-    <color>Blanco</color>
-    <precio venta="nuevo">1232</precio>
+    <marca>Fredolsen</marca>
+    <modelo>el de ayer</modelo>
+    <puertas>2</puertas>
+    <color>amarillo</color>
+    <precio venta="nuevo">454</precio>
   </coche>
 </coches>

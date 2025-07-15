@@ -30,7 +30,8 @@
 
 <div class="form-container">
   <h1>Añadir Nuevo Coche</h1>
-  <form action="../controladores/c.insertar_editar.php" method="post">
+  <form action="../controladores/c.insertar.php" method="post">
+    <input type="hidden" name="accion" value="insertar">
     <div class="mb-3">
       <label class="form-label">Matrícula</label>
       <input type="text" name="matricula" class="form-control" placeholder="Ej: 1234ABC" required min="0" max="99999">
@@ -53,7 +54,7 @@
     </div>
     <div class="mb-3">
       <label class="form-label">Precio</label>
-      <input type="text" name="precio" class="form-control" placeholder="Ej: 012345€" required pattern="[0-9]{6}€">
+      <input type="text" name="precio" class="form-control" placeholder="Ej: 012345€" required min="0" max="99999">
     </div>
     <div class="mb-3">
       <label class="form-label">Tipo de Venta</label>

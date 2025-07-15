@@ -21,6 +21,16 @@ foreach ($xml->getElementsByTagName("coche") as $coche) {
 }
 
 if (!$exists) {
+    // Verificamos si la matrícula ya existe antes de crear uno nuevo
+    foreach ($xml->getElementsByTagName("coche") as $existing) {
+        if ($existing->getAttribute("matricula") === $matricula) {
+            // Si existe redirigimos con el mensaje de error
+            header("Location: ../vistas/index.php?error=matricula_duplicada");
+            exit();
+        }
+    }
+
+    // Crear nuevo coche
     $coche = $xml->createElement("coche");
     $coche->setAttribute("matricula", $matricula);
 
@@ -36,6 +46,9 @@ if (!$exists) {
     $xml->documentElement->appendChild($coche);
 }
 
+// Guardamos y redirigimos
 $xml->save("../xml/coches.xml");
-header("Location: ../vistas/index.php");
+header("Location: ../vistas/index.php?insertado=" . urlencode($matricula));
+exit();
+
 ?>

@@ -33,7 +33,7 @@ include_once "../controladores/c.editar.php"
 
 <div class="form-container">
   <h1>Editar Coche</h1>
-  <form action="../controladores/c.insertar_editar.php" method="post">
+  <form action="../controladores/c.editar.php" method="post">
     <div class="mb-3">
       <label class="form-label">Matrícula</label>
       <input type="text" name="matricula" class="form-control" value="<?php echo $matricula; ?>" readonly>
