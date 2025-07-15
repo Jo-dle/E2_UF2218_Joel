@@ -12,6 +12,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <!--Link a bootstrap-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
         <!--script para confirmación en la eliminación de coches-->
         <script type="text/javascript">
           function confirmarEliminacion() {
@@ -56,7 +58,7 @@
             <a href="../vistas/insertar.php" class="btn btn-success">➕ Añadir nuevo coche</a>
           </div>
 
-          <table class="table table-bordered table-hover align-middle text-center">
+          <table id="tabla-coches" class="table table-bordered table-hover align-middle text-center">
             <thead>
               <tr>
                 <th>Matrícula</th>

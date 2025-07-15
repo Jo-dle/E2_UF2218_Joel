@@ -22,4 +22,4 @@
     <color>amarillo</color>
     <precio venta="nuevo">454</precio>
   </coche>
-</coches>
+<coche matricula="1234RTY"><marca>Toyota</marca><modelo>el de ayer</modelo><puertas>2</puertas><color>Guinda</color><precio venta="nuevo">45874</precio></coche></coches>
