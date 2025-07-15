@@ -34,7 +34,7 @@
     <input type="hidden" name="accion" value="insertar">
     <div class="mb-3">
       <label class="form-label">Matrícula</label>
-      <input type="text" name="matricula" class="form-control" placeholder="Ej: 1234ABC" required min="0" max="99999">
+      <input type="text" name="matricula" class="form-control" required pattern="\d{4}[A-Z]{3}" placeholder="Ej: 1234ABC" required min="0" max="99999">
     </div>
     <div class="mb-3">
       <label class="form-label">Marca</label>
@@ -54,7 +54,7 @@
     </div>
     <div class="mb-3">
       <label class="form-label">Precio</label>
-      <input type="text" name="precio" class="form-control" placeholder="Ej: 012345€" required min="0" max="99999">
+      <input type="number" name="precio" class="form-control" required min="0" max="99999">
     </div>
     <div class="mb-3">
       <label class="form-label">Tipo de Venta</label>
