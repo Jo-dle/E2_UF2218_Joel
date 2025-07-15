@@ -33,7 +33,7 @@
   <form action="../controladores/c.insertar_editar.php" method="post">
     <div class="mb-3">
       <label class="form-label">Matrícula</label>
-      <input type="text" name="matricula" class="form-control" placeholder="Ej: 1234ABC" required pattern="[0-9]{4}[A-Z]{3}">
+      <input type="text" name="matricula" class="form-control" placeholder="Ej: 1234ABC" required min="0" max="99999">
     </div>
     <div class="mb-3">
       <label class="form-label">Marca</label>

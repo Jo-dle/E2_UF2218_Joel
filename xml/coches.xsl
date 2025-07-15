@@ -10,6 +10,7 @@
         <title>Listado de Coches</title>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <!--Link a bootstrap-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
         <!--script para confirmación en la eliminación de coches-->
         <script type="text/javascript">
@@ -17,6 +18,7 @@
             return confirm("¿Estás seguro de que deseas eliminar este coche?");
           }
         </script>
+        <!--Estilos de la página-->
         <style>
           body {
             background-color: #f9fafb;
@@ -75,7 +77,7 @@
                   <td><xsl:value-of select="modelo"/></td>
                   <td><xsl:value-of select="puertas"/></td>
                   <td><xsl:value-of select="color"/></td>
-                  <td><xsl:value-of select="precio"/></td>
+                  <td><xsl:value-of select="concat(precio, ' €')"/></td>
                   <td><xsl:value-of select="precio/@venta"/></td>
                   <td>
                     <div class="d-flex justify-content-center gap-2">
