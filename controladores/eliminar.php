@@ -20,17 +20,23 @@ $encontrado = false;
 
 foreach ($coches as $coche) {
     if ($coche->getAttribute("matricula") === $matricula) {
-        $coche->parentNode->removeChild($coche);
-        $encontrado = true;
+        // Doble verificación de existencia
+        if ($coche->parentNode !== null) {
+            $coche->parentNode->removeChild($coche);
+            $encontrado = true;
+        }
         break;
     }
 }
 
 if ($encontrado) {
-    $xml->save($archivoXML);
-    header("Location: ../vistas/index.php");
-    exit();
+    if ($xml->save($archivoXML)) {
+        header("Location: ../vistas/index.php?eliminado=" . urlencode($matricula));
+        exit();
+    } else {
+        echo "💾 Error al guardar el archivo XML después de eliminar.";
+    }
 } else {
-    echo "🚫 Error: Coche con matrícula '$matricula' no encontrado.";
+    echo "🚫 Error: Coche con matrícula '$matricula' no encontrado o ya fue eliminado.";
 }
 ?>

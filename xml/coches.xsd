@@ -45,5 +45,11 @@
                 </xs:element>
             </xs:sequence>
         </xs:complexType>
+        <!--Aplicamos la restricción de "Unica" a las matrículas-->
+        <xs:unique name="matriculaUnica">
+            <xs:selector xpath="coche"/>
+            <xs:field xpath="@matricula"/>
+        </xs:unique>
+
     </xs:element>
 </xs:schema>

@@ -1,13 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="coches.xsl"?>
 <coches xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="./coches.xsd">
-  <coche matricula="5678XYZ">
-    <marca>Ford</marca>
-    <modelo>Focus</modelo>
-    <puertas>5</puertas>
-    <color>Azul</color>
-    <precio venta="ocasión">14500</precio>
-  </coche>
   <coche matricula="0001DEF">
     <marca>Volkswagen</marca>
     <modelo>Golf</modelo>
@@ -35,12 +28,5 @@
     <puertas>3</puertas>
     <color>Blanco</color>
     <precio venta="nuevo">1232</precio>
-  </coche>
-  <coche matricula="4545CCC">
-    <marca>Land Rover</marca>
-    <modelo>yeep</modelo>
-    <puertas>5</puertas>
-    <color>Verde</color>
-    <precio venta="ocasión">9999</precio>
   </coche>
 </coches>

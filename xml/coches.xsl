@@ -11,6 +11,12 @@
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+        <!--script para confirmación en la eliminación de coches-->
+        <script type="text/javascript">
+          function confirmarEliminacion() {
+            return confirm("¿Estás seguro de que deseas eliminar este coche?");
+          }
+        </script>
         <style>
           body {
             background-color: #f9fafb;
@@ -85,6 +91,7 @@
                           <xsl:text>../controladores/eliminar.php?matricula=</xsl:text>
                           <xsl:value-of select="@matricula"/>
                         </xsl:attribute>
+                        <xsl:attribute name="onclick">return confirmarEliminacion()</xsl:attribute>
                         🗑️ Eliminar
                       </a>
                     </div>
