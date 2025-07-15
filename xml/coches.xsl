@@ -50,14 +50,15 @@
           }
         </style>
       </head>
+      <!--empezamos el listado de los coches-->
       <body>
         <div class="container">
           <h1 class="text-center">Listado de Coches</h1>
-
+          <!--Botón que nos redirecciona a la pagina insertar para crear un coche nuevo-->
           <div class="mb-4 text-end">
             <a href="../vistas/insertar.php" class="btn btn-success">➕ Añadir nuevo coche</a>
           </div>
-
+          <!--añadimos el id de la tabla para poder usar datatables de bootstrap-->
           <table id="tabla-coches" class="table table-bordered table-hover align-middle text-center">
             <thead>
               <tr>
@@ -72,6 +73,7 @@
               </tr>
             </thead>
             <tbody>
+              <!-- seleccionamos la información de cada coche del documento xml-->
               <xsl:for-each select="coches/coche">
                 <tr>
                   <td><xsl:value-of select="@matricula"/></td>
@@ -84,6 +86,7 @@
                   <td>
                     <div class="d-flex justify-content-center gap-2">
                       <a>
+                        <!--Botón que nos redirecciona a editar-->
                         <xsl:attribute name="href">
                           <xsl:text>editar.php?matricula=</xsl:text>
                           <xsl:value-of select="@matricula"/>
@@ -91,10 +94,12 @@
                         <button class="btn btn-primary btn-sm">✏️ Editar</button>
                       </a>
                       <a class="btn btn-danger btn-sm">
+                        <!--Botón que llama al código de eliminar-->
                         <xsl:attribute name="href">
                           <xsl:text>../controladores/c.eliminar.php?matricula=</xsl:text>
                           <xsl:value-of select="@matricula"/>
                         </xsl:attribute>
+                        <!--Mensaje de confirmación al borrar-->
                         <xsl:attribute name="onclick">return confirmarEliminacion()</xsl:attribute>
                         🗑️ Eliminar
                       </a>

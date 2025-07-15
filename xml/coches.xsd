@@ -2,6 +2,7 @@
     <xs:element name="coches">
         <xs:complexType>
             <xs:sequence>
+                <!--empezamos las validación de los campos en el documento xml-->
                 <xs:element name="coche" maxOccurs="unbounded">
                     <xs:complexType>
                         <xs:sequence>
@@ -9,6 +10,7 @@
                             <xs:element name="modelo" type="xs:string"/>
                             <xs:element name="puertas">
                                 <xs:simpleType>
+                                    <!--limitamos la cantidad de puertas-->
                                     <xs:restriction base="xs:integer">
                                         <xs:minInclusive value="2"/>
                                         <xs:maxInclusive value="5"/>
@@ -20,6 +22,7 @@
                                 <xs:complexType>
                                     <xs:simpleContent>
                                         <xs:extension base="xs:integer">
+                                            <!--requerimos el campo de venta y validamos las tres opciones -->
                                             <xs:attribute name="venta" use="required">
                                                 <xs:simpleType>
                                                         <xs:restriction base="xs:string">
@@ -34,6 +37,7 @@
                                 </xs:complexType>
                             </xs:element>
                         </xs:sequence>
+                        <!--Obligamos el patrón de la matrícual-->
                         <xs:attribute name="matricula" use="required">
                             <xs:simpleType>
                                 <xs:restriction base="xs:string">
@@ -45,7 +49,7 @@
                 </xs:element>
             </xs:sequence>
         </xs:complexType>
-        <!--Aplicamos la restricción de "Unica" a las matrículas-->
+        <!--Aplicamos la restricción de "Unica" a las matrículas para que no se puedan repetir-->
         <xs:unique name="matriculaUnica">
             <xs:selector xpath="coche"/>
             <xs:field xpath="@matricula"/>

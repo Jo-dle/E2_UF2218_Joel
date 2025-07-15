@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="es">
+<!--abrimos la cabezera -->
 <head>
   <meta charset="UTF-8">
   <title>Añadir Coche</title>
+<!--Link a boostrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Estilos personalizados de la página-->
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -27,13 +30,13 @@
   </style>
 </head>
 <body>
-
+<!-- enviamos la información desde un formulario com metodo "post" a el controlador de insertar en controladores/c.insertar.php-->
 <div class="form-container">
   <h1>Añadir Nuevo Coche</h1>
   <form action="../controladores/c.insertar.php" method="post">
     <input type="hidden" name="accion" value="insertar">
     <div class="mb-3">
-      <label class="form-label">Matrícula</label>
+      <label class="form-label">Matrícula</label>               <!-- Validamos la introducción de los datos-->
       <input type="text" name="matricula" class="form-control" required pattern="\d{4}[A-Z]{3}" placeholder="Ej: 1234ABC" required min="0" max="99999">
     </div>
     <div class="mb-3">
@@ -53,10 +56,11 @@
       <input type="text" name="color" class="form-control" required>
     </div>
     <div class="mb-3">
-      <label class="form-label">Precio</label>
+      <label class="form-label">Precio</label>               <!-- Validamos la introducción de los datos-->
       <input type="number" name="precio" class="form-control" required min="0" max="99999">
     </div>
     <div class="mb-3">
+      <!-- mostramos las opciones de venta con un menu de "select"-->
       <label class="form-label">Tipo de Venta</label>
       <select name="venta" class="form-select" required>
         <option value="nuevo">Nuevo</option>
@@ -64,6 +68,7 @@
         <option value="segunda mano">Segunda Mano</option>
       </select>
     </div>
+    <!-- redireccionamos al index al cancelar o insertar-->
     <button type="submit" class="btn btn-primary btn-space">Insertar</button>
     <a href="index.php" class="btn btn-secondary">Cancelar</a>
   </form>

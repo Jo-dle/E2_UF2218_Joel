@@ -1,4 +1,5 @@
 <?php
+//incluimos los controladores de este archivo
 include_once "../controladores/c.editar.php"
 ?>
 <!DOCTYPE html>
@@ -6,8 +7,11 @@ include_once "../controladores/c.editar.php"
 <head>
   <meta charset="UTF-8">
   <title>Editar Coche</title>
+  <!--Link a bootstrap para aplicar estilo-->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Estilos personalizados-->
   <style>
+    
     body {
       font-family: Arial, sans-serif;
       margin: 40px;
@@ -30,12 +34,14 @@ include_once "../controladores/c.editar.php"
   </style>
 </head>
 <body>
-
+<!--Empezamos el formulario de editar-->
 <div class="form-container">
   <h1>Editar Coche</h1>
+  <!-- Enviamos el formulario al controlador de editar de manera "post"-->
   <form action="../controladores/c.editar.php" method="post">
     <div class="mb-3">
       <label class="form-label">Matrícula</label>
+      <!-- abrimos un php en la matrícula para que no se pueda modificar-->
       <input type="text" name="matricula" class="form-control" value="<?php echo $matricula; ?>" readonly>
     </div>
     <div class="mb-3">
@@ -48,6 +54,7 @@ include_once "../controladores/c.editar.php"
     </div>
     <div class="mb-3">
       <label class="form-label">Puertas</label>
+      <!-- volvemos a aplicar la restricción minima de 2 y maxima de 5-->
       <input type="number" name="puertas" class="form-control" min="2" max="5" value="<?php echo $puertas; ?>">
     </div>
     <div class="mb-3">
@@ -60,13 +67,16 @@ include_once "../controladores/c.editar.php"
     </div>
     <div class="mb-3">
       <label class="form-label">Tipo de Venta</label>
+      <!-- usamos un poco de php para poder cambiar el menú select-->
       <select name="venta" class="form-select">
         <option value="nuevo" <?php if ($venta == "nuevo") echo "selected"; ?>>Nuevo</option>
         <option value="ocasión" <?php if ($venta == "ocasión") echo "selected"; ?>>Ocasión</option>
         <option value="segunda mano" <?php if ($venta == "segunda mano") echo "selected"; ?>>Segunda Mano</option>
       </select>
     </div>
+    <!--Botones-->
     <button type="submit" class="btn btn-primary btn-space">Guardar Cambios</button>
+    <!-- Al cancelar nos enviamos al index-->
     <a href="index.php" class="btn btn-secondary">Cancelar</a>
   </form>
 </div>
