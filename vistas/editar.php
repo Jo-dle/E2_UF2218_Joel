@@ -41,7 +41,7 @@ include_once "../controladores/c.editar.php"
   <form action="../controladores/c.editar.php" method="post">
     <div class="mb-3">
       <label class="form-label">Matrícula</label>
-      <!-- abrimos un php en la matrícula para que no se pueda modificar-->
+      <!-- abrimos un php en la matrícula y aplicamos "readonly" para que no se pueda modificar-->
       <input type="text" name="matricula" class="form-control" value="<?php echo $matricula; ?>" readonly>
     </div>
     <div class="mb-3">

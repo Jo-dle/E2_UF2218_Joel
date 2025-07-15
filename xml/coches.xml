@@ -4,7 +4,7 @@
   <coche matricula="0001DEF">
     <marca>Volkswagen</marca>
     <modelo>Golf</modelo>
-    <puertas>3</puertas>
+    <puertas>5</puertas>
     <color>Negro</color>
     <precio venta="segunda mano">9800</precio>
   </coche>
